@@ -2,7 +2,7 @@ class User < ApplicationRecord
   attr_accessor :remember_cookie
   
   # before_create :generate_remember
-  
+  has_many :posts, dependent: :destroy
   has_secure_password
 
   def generate_remember
